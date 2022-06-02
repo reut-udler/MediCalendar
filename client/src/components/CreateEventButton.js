@@ -8,7 +8,7 @@ export default function CreateEventButton() {
   return (
     <button
       onClick={() => setShowEventModal(true)}
-      className="border p-2 rounded-full flex items-center shadow-md hover:shadow"
+      className="border p-2 rounded-full flex items-center shadow-md hover:shadow-xl"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

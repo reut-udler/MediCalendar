@@ -42,7 +42,7 @@ export default function CalendarHeader() {
         MediCalendar
       </h1>
       <button
-        className="bg-gray-50 hover:bg-gray-50 active:bg-teal-500 focus:outline-none focus:ring-teal-300 border border-teal-500 rounded py-2 px-4 mr-5 text-teal-500"
+        className="bg-gray-50 hover:bg-gray-50 active:bg-teal-500 focus:outline-none focus:ring-teal-300 border border-teal-500 rounded py-2 px-4 mr-5 text-teal-500 hover:shadow-xl"
         onClick={handleReset}
       >
         Today
