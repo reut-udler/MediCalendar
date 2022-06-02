@@ -30,7 +30,7 @@ export default function CalendarHeader() {
         className="h-7 w-7"
         viewBox="0 0 20 20"
         fill="none"
-        stroke="#51b3a5"
+        stroke="#14b8a6"
       >
         <path
           fillRule="evenodd"
@@ -38,17 +38,22 @@ export default function CalendarHeader() {
           clipRule="evenodd"
         />
       </svg>
-      <h1 className="mr-10 text-xl text-gray-500 font-bold">MediCalendar</h1>
-      <button className="border rounded py-2 px-4 mr-5" onClick={handleReset}>
+      <h1 className="mr-10 text-xl text-gray-500 font-bold px-2">
+        MediCalendar
+      </h1>
+      <button
+        className="bg-gray-50 hover:bg-gray-50 active:bg-teal-500 focus:outline-none focus:ring-teal-300 border border-teal-500 rounded py-2 px-4 mr-5 text-teal-500"
+        onClick={handleReset}
+      >
         Today
       </button>
       <button onClick={handlePrevMonth}>
-        <span className="material-icons-outlined curser-pointer text-gray-600 mx-2">
+        <span className="material-icons-outlined curser-pointer text-gray-500 mx-2">
           chevron_left
         </span>
       </button>
       <button onClick={handleNextMonth}>
-        <span className="material-icons-outlined curser-pointer text-gray-600 mx-2">
+        <span className="material-icons-outlined curser-pointer text-gray-500 mx-2">
           chevron_right
         </span>
       </button>

@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import GlobalContext from "./GlobalContext";
 
 export default function ContextWrapper(props) {
   const [monthIndex, setMonthIndex] = useState(dayjs().month());
-  const [smallCalendarMounth, setSmallCalendarMounth] = useState(null);
+  const [smallCalendarMounth, setSmallCalendarMonth] = useState(null);
+  const [daySelected, setDaySelected] = useState(dayjs());
+  const [showEventModal, setShowEventModal] = useState(false);
 
   useEffect(() => {
     if (smallCalendarMounth !== null) {
-      setMonthIndex();
+      setMonthIndex(smallCalendarMounth);
     }
   }, [smallCalendarMounth]);
 
@@ -18,7 +20,11 @@ export default function ContextWrapper(props) {
         monthIndex,
         setMonthIndex,
         smallCalendarMounth,
-        setSmallCalendarMounth,
+        setSmallCalendarMonth,
+        daySelected,
+        setDaySelected,
+        showEventModal,
+        setShowEventModal,
       }}
     >
       {props.children}

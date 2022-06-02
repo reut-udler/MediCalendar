@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 export default function Day({ day, rowIdx }) {
   const getCurrentDayClass = () => {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
-      ? "bg-blue-500 rounded-full text-white w-7"
+      ? "bg-teal-500 rounded-full text-white w-7"
       : " ";
   };
   return (
