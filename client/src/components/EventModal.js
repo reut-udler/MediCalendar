@@ -93,13 +93,13 @@ export default function EventModal() {
               bookmark_border
             </span>
             <div className="flex gap-x-2">
-              {labelsClasses.map((lblClass, i) => (
+              {labelsClasses.map((labelColor, i) => (
                 <span
                   key={i}
-                  onClick={() => setSelectedLabel(lblClass)}
-                  className={`bg-${lblClass}-400 w-6 h-6 rounded-full flex items-center justify-center curser-pointer`}
+                  onClick={() => setSelectedLabel(labelColor)}
+                  className={`bg-${labelColor}-400 w-6 h-6 rounded-full flex items-center justify-center curser-pointer`}
                 >
-                  {selectedLabel === lblClass && (
+                  {selectedLabel === labelColor && (
                     <span className="material-icons-outlined text-red text-sm">
                       check
                     </span>

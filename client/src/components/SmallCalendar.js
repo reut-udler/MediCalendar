@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 
 import { getMonth } from "./../utils";
 import GlobalContext from "./../context/GlobalContext";
-import MonthHeader from "./MonthTitle";
+import MonthTitle from "./MonthTitle";
 import { PrevMonthButton, NextMonthButton } from "./CalendarButtons";
 
 export default function SmallCalendar() {
@@ -40,7 +40,7 @@ export default function SmallCalendar() {
     <div className="mt-9">
       <header className="flex justify-between">
         <p className="text-gray-500 font-bold">
-          <MonthHeader month={currentMonthIdx} />
+          <MonthTitle month={currentMonthIdx} />
         </p>
         <div>
           <PrevMonthButton
@@ -53,6 +53,7 @@ export default function SmallCalendar() {
           />
         </div>
       </header>
+
       <div className="grid grid-cols-7 grid-rows-6">
         {currentMonth[0].map((day, i) => (
           <span key={i} className="text-sm py-1 text-center">
