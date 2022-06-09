@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import dayjs from "dayjs";
+
 import { getMonth } from "./../utils";
 import GlobalContext from "./../context/GlobalContext";
+import MonthHeader from "./MonthTitle";
+import { PrevMonthButton, NextMonthButton } from "./CalendarButtons";
 
 export default function SmallCalendar() {
   const [currentMonthIdx, setCurrentMonthIdx] = useState(dayjs().month());
@@ -18,14 +21,6 @@ export default function SmallCalendar() {
   useEffect(() => {
     setCurrentMonthIdx(monthIndex);
   }, [monthIndex]);
-
-  function handlePrevMonth() {
-    setCurrentMonthIdx(currentMonthIdx - 1);
-  }
-
-  function handleNextMonth() {
-    setCurrentMonthIdx(currentMonthIdx + 1);
-  }
 
   function getDayClass(day) {
     const format = "DD-MM-YY";
@@ -45,19 +40,17 @@ export default function SmallCalendar() {
     <div className="mt-9">
       <header className="flex justify-between">
         <p className="text-gray-500 font-bold">
-          {dayjs(new Date(dayjs().year(), currentMonthIdx)).format("MMMM YYYY")}
+          <MonthHeader month={currentMonthIdx} />
         </p>
         <div>
-          <button onClick={handlePrevMonth}>
-            <span className="material-icons-outlined curser-pointer text-gray-600 mx-2">
-              chevron_left
-            </span>
-          </button>
-          <button onClick={handleNextMonth}>
-            <span className="material-icons-outlined curser-pointer text-gray-600 mx-2">
-              chevron_right
-            </span>
-          </button>
+          <PrevMonthButton
+            index={currentMonthIdx}
+            setIndex={setCurrentMonthIdx}
+          />
+          <NextMonthButton
+            index={currentMonthIdx}
+            setIndex={setCurrentMonthIdx}
+          />
         </div>
       </header>
       <div className="grid grid-cols-7 grid-rows-6">
